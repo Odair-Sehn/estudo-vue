@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <p> {{ titulo }}</p>
+    <p> {{ saudacao()}} </p>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            titulo: "Usando Vue, declarando essa frase no data, manipulando DOM"
+        },
+        methods: {
+            saudacao: function() {
+                return "Essa frase é uma function, utilizando o dom em js e passando para o html"
+            }
+        }
+    })
+</script>

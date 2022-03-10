@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Matador de monstros</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="panel scores">
+            <div style="width:43%; float:left; text-align: center;">
+                Jogador
+                <div class="barraProgresso progressoJogador" :style="{width}"></div>
+                {{width + "%"}}
+            </div>
+            <div style="width:43%; float:right; text-align: center;">
+                Monstro
+                <div class="barraProgresso progressoMonstro"></div>
+                {{vidaMonstro + "%"}}
+            </div>
+        </div>
+        <div class="panel result">
+            {{verVida()}}
+        </div>
+        <div class="panel buttons">
+            <div v-if="!jogoAtivo">
+                <button @click="{{jogoAtivo = true}}" style="background-color: blue; color:white"> Iniciar Jogo</button>
+            </div>
+            <div v-else> 
+                <button @click="ataque" style="background-color: red; color: white">Ataque</button>
+                <button style="background-color: orange; color: white">Ataque Especial</button>
+                <button style="background-color: rgb(29, 192, 29); color: white">Curar</button>
+                <button @click="{{jogoAtivo = false}}" style="background-color: grey; color: white">Desistir</button>
+            </div>
+        </div>
+        <div class="panel logs"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

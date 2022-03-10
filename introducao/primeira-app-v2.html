@@ -1,0 +1,28 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <v-text-field
+            label="Login"
+            outlined
+          ></v-text-field>
+        </v-col>
+        <v-col
+          cols="12"
+          sm="6"
+          md="3"
+        >
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Login!'
+        },
+        methods: {
+            alterarTitulo(event) {
+                this.titulo = event.target.value
+            }
+        }
+    })
+</script>

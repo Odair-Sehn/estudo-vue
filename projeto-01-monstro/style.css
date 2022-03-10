@@ -1,0 +1,32 @@
+html {
+    font-family: Helvetica;
+}
+#app {
+    display: flex;
+    flex-direction: column;
+}
+.panel {
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+.barraProgresso {
+    height: 20px;
+    width: 300px;
+    border: 1px solid;
+}
+.progressoJogador {
+    background-color: rgb(41, 170, 41);
+    width: 100%;
+}
+.progressoMonstro {
+    background-color: rgb(41, 170, 41);
+    width: 100%;
+}
+.result {
+    text-align: center;
+    height: 10px;
+}
+.buttons {
+    text-align: center;
+}

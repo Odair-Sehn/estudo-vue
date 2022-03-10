@@ -1,0 +1,33 @@
+DOM (Documment Object Model) = Manipulação de objetos pelo javascript, atualizar elementos, alterar estilização, html, etc
+
+Se atentar para não declarar data e function com o mesmo nome.
+
+Diretivas (binds) = São propriedades personalizadas que são interpretadas pelo vue (js) que podem ser utilizadas no HTML (desde HTML5). Geralmente vai se utilizar propriedades existentes, mas também é possível criar e utilizar uma nova.
+exemplo:<p> oda-bind="abc" </p> = A propriedade oda vai ter o conteudo abc (pode usar somente os : ao invés de v-bind, tipo um alias)
+
+v-once = É utilizada para quando ser atribuido um valor para propriedade, ele não é atualizado, mesmo que utilizado em outros lugares.
+Exemplo: Utilizado o titulo na data = 'oi' e atualizando o titulo em uma função para 'ola', utilizando o v-once numa tag <p> HTML, ele irá manter o titulo como 'oi', pois foi o valor que foi atribuido primeiro
+
+v-html = Para colocar tags html no vue, atribuindo estes a um objeto, ai nas tags de html você declara o v-html e pode usar esse objeto diretamente
+Exemplo:
+Data tem o linkHtml: "<a href='www.google'> Google </a>" 
+No html ficará <a v-html:href="linkHtml"> Google </a>
+
+v-on = escutar eventos do DOM e rodar algum JavaScript quando tal evento for disparado. (Pode usar o @ invés de sempre colocar v-on)
+Exemplo: Declare uma função (no methods), que retorne o contador++
+No html ficará <button v-on:click="somar">Somar +1</button>
+
+Propriedades reativas (Two-Way-Binding): Aqui é abordado a questão das views (vue) atualizar o html e o html quando for alterado em tela, atualizar as views. Para fazer o html atualizar as views, precisariamos fazer desta forma:
+<p> {{titulo}} </p>
+<input type="text" v-bind:value="tituloTexto" v-on:input="titulo = $event.target.value">
+Mas para simplificar essa atualização, o vue disponibiliza o v-model, que faz essa atualização dos dois lados, então ficaria da seguinte forma:
+<p> {{titulo}} </p>
+<input type="text" v-model="titulo">
+
+
+
+
+tags:
+
+<span> = deixa tudo em uma linha
+<div> = separa linha a linha
