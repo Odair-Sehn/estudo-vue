@@ -10,18 +10,23 @@
 <body>
     <div id="app">
         <div class="panel scores">
-            <div style="width:43%; float:left; text-align: center;">
-                Jogador
-                <div class="barraProgresso progressoJogador" :style="{width}"></div>
-                {{width + "%"}}
+            <div class="score">
+                <p>Jogador</p>
+                <div class="barra-vida">
+                    <div class="vida" :class="{perigo: vidaJogador < 20}" :style="{width: vidaJogador + '%'}"></div>
+                </div>
+                <div>{{vidaJogador}}%</div>
             </div>
-            <div style="width:43%; float:right; text-align: center;">
-                Monstro
-                <div class="barraProgresso progressoMonstro"></div>
-                {{vidaMonstro + "%"}}
+            <div class="score">
+                <p>Monstro</p>
+                <div class="barra-vida">
+                    <div class="vida" :class="{perigo: vidaMonstro < 20}" :style="{width: vidaMonstro + '%'}"></div>
+                </div>
+                <div>{{vidaMonstro}}%</div>
             </div>
         </div>
-        <div class="panel result">
+    
+    <div class="panel result">
             {{verVida()}}
         </div>
         <div class="panel buttons">
@@ -32,10 +37,11 @@
                 <button @click="ataque" style="background-color: red; color: white">Ataque</button>
                 <button style="background-color: orange; color: white">Ataque Especial</button>
                 <button style="background-color: rgb(29, 192, 29); color: white">Curar</button>
-                <button @click="{{jogoAtivo = false}}" style="background-color: grey; color: white">Desistir</button>
+                <button @click="desistir" style="background-color: grey; color: white">Desistir</button>
             </div>
         </div>
-        <div class="panel logs"></div>
+    </div>
+    <div class="panel logs"></div>
     </div>
     <script src="app.js"></script>
 </body>

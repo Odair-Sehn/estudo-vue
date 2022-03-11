@@ -8,20 +8,32 @@ html {
 .panel {
     margin: 10px;
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 10px rgb(0, 0, 0, 0.15);
 }
-.barraProgresso {
+/* Área dos Pontos */
+.scores {
+    display: flex;
+}
+.score {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ .barra-vida {
     height: 20px;
-    width: 300px;
-    border: 1px solid;
+    width: 80%;
+    border: 1px solid rgb(177, 170, 170);
 }
-.progressoJogador {
-    background-color: rgb(41, 170, 41);
-    width: 100%;
+.barra-vida .vida {
+    display: flex;
+    background-color: rgb(11, 145, 11);
+    height: 100%;
+    justify-content: center;
 }
-.progressoMonstro {
-    background-color: rgb(41, 170, 41);
-    width: 100%;
+.barra-vida .vida.perigo {
+    background-color: red;
 }
 .result {
     text-align: center;
@@ -29,4 +41,4 @@ html {
 }
 .buttons {
     text-align: center;
-}
+}  
