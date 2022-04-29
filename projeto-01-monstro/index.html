@@ -25,23 +25,30 @@
                 <div>{{vidaMonstro}}%</div>
             </div>
         </div>
-    
-    <div class="panel result">
+
+        <div class="panel result">
             {{verVida()}}
         </div>
-        <div class="panel buttons">
+        <div class="panel areaButtons">
+            <div class="buttons">
             <div v-if="!jogoAtivo">
-                <button @click="{{jogoAtivo = true}}" style="background-color: blue; color:white"> Iniciar Jogo</button>
+                <button class="buttons iniciarJogo" @click="novoJogo"> Iniciar Jogo</button>
             </div>
-            <div v-else> 
-                <button @click="ataque" style="background-color: red; color: white">Ataque</button>
-                <button style="background-color: orange; color: white">Ataque Especial</button>
-                <button style="background-color: rgb(29, 192, 29); color: white">Curar</button>
-                <button @click="desistir" style="background-color: grey; color: white">Desistir</button>
+            <div v-else>
+                <button class="buttons ataque" @click="ataque(false)">Ataque</button>
+                <button class="buttons ataqueEspecial" @click="ataque(true)"> Ataque Especial</button>
+                <button class="buttons curar" @click="curarAtacar">Curar</button>
+                <button class="buttons desistir" @click="desistir">Desistir</button>
             </div>
         </div>
+        </div>
+        <div v-if="logs.length" class="panel logs">
+            <ul class="logs-ul">
+                <li
+                    v-for="log in logs" class="logs-ul-li" :class="log.classe"> {{log.texto}}
+                </li>
+            </ul>
     </div>
-    <div class="panel logs"></div>
     </div>
     <script src="app.js"></script>
 </body>

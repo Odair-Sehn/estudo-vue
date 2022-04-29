@@ -21,10 +21,10 @@ html {
     justify-content: center;
     align-items: center;
 }
- .barra-vida {
+.barra-vida {
     height: 20px;
     width: 80%;
-    border: 1px solid rgb(177, 170, 170);
+    border: 1px solid rgb(100, 96, 96);
 }
 .barra-vida .vida {
     display: flex;
@@ -39,6 +39,61 @@ html {
     text-align: center;
     height: 10px;
 }
+.areaButtons {
+    display: flex;
+    justify-content: center;
+}
 .buttons {
-    text-align: center;
-}  
+    padding: 5px 10px;
+    margin: 0px 10 px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.buttons .ataque {
+    color: white;
+    background-color: red;
+}
+.buttons .ataqueEspecial {
+    color: black;
+    background-color: orange;
+}
+.buttons .curar {
+    color: white;
+    background-color: green;
+}
+.buttons .desistir {
+    color: black;
+    background-color: grey;
+}
+.buttons .iniciarJogo {
+    color: white;
+    background-color: blue;
+}
+.logs-ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.logs-ul-li {
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 0.2rem;
+    margin: 4px 0px;
+    padding: 3px 0px;
+}
+.logJogador {
+    background-color: #4253afaa;
+}
+.logMonstro {
+    background-color: #e51c23aa;
+}
+.logCurar {
+    background-color: #008000aa;
+}
